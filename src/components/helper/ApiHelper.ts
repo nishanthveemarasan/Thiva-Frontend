@@ -49,7 +49,7 @@ class ApiHelper {
       
     } catch (e:any) {
       console.log('inside  catch')
-      console.log(e.response)
+      console.log(e.message || "something went wrong")
       return {
         success: false,
       };
