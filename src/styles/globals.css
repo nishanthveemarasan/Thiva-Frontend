@@ -38,6 +38,8 @@
   --sidebar-ring: 217.2 91.2% 59.8%;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
+  --accent: 213 40% 92%;
+  --accent-foreground: 213 56% 28%;
 
 }
 
@@ -81,6 +83,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
   @keyframes accordion-down {
     from { height: 0; }
