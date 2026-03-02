@@ -1,7 +1,7 @@
 import { educationData } from "@/types/store";
 import { GraduationCap } from "lucide-react";
-import MyCard from "../templates/MyCard";
-import { Badge } from "../ui/badge";
+import MyCard from "@/components/templates/MyCard";
+import { Badge } from "@/components/ui/badge";
 
 const Education = ({ list }: { list: educationData[] }) => {
     return <section className="py-16">

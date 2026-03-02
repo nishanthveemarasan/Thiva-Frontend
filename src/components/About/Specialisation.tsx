@@ -1,5 +1,5 @@
 import { serviceData } from "@/types/store";
-import MyCard from "../templates/MyCard";
+import MyCard from "@/components/templates/MyCard";
 
 const Specialisation = ({ list }: { list: serviceData[] }) => {
     const initial = (title: string) => {

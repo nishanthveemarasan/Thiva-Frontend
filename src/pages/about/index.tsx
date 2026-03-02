@@ -37,7 +37,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
 
       <Background data={data.profile} />
 
-      <section className="py-16 bg-muted">
+     <section className="py-16 bg-muted">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s) => (
@@ -51,7 +51,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
         </div>
       </section>
 
-      <Specialisation list={data.services} />
+      <Specialisation list={data.services} /> 
 
       <Experiences list={data.experiences} />
 

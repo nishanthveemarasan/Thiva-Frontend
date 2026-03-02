@@ -1,6 +1,6 @@
 import { testimonialData } from "@/types/store";
 import MyCard from "../templates/MyCard";
-import TestimonialItem from "./TestimonialItem";
+import TestimonialItem from "@/components/TestimonialPage/TestimonialItem";
 
 const TestimonialList = ({ list }: { list: testimonialData[] }) => {
     return <>
