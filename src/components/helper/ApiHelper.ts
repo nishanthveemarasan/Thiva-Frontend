@@ -51,7 +51,7 @@ class ApiHelper {
         result: result.data
       }
       
-    } catch (e) {
+    } catch (e:any) {
       console.log('inside  catch')
       console.log(e.response)
       return {
