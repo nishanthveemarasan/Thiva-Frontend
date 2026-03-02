@@ -11,7 +11,7 @@ export interface ApiRequestOptions {
   headers?: RawAxiosRequestHeaders;
 }
 class ApiHelper {
-  static baseUrl: string = import.meta.env.VITE_BACKEND_URL;
+  static baseUrl: string = process.env.APP_BACKEND_URL as string;
   static axiosInstance: AxiosInstance = axios.create({
     baseURL: this.baseUrl,
     headers: {
