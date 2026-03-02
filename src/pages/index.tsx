@@ -46,7 +46,7 @@ const projects = [
   { title: "Municipal Road Network", category: "Infrastructure", location: "Suburbs", image: "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?w=600&h=400&fit=crop" },
 ];
 
-export default function Home() {
+const Home = () => {
   return <Layout>
     {/* Hero */}
     <section className="relative min-h-[80vh] flex items-center">
@@ -176,3 +176,5 @@ export default function Home() {
   </Layout>
 
 }
+
+export default Home;
