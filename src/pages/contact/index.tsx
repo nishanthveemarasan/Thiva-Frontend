@@ -29,7 +29,7 @@ const Contact: React.FC<{data:contactDetails, error:boolean}> = ({data, error}) 
           <div className="container">
             <div className="grid lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
               <div className="lg:col-span-2 space-y-6">
-                <ContactDetails />
+                <ContactDetails data={data} />
               </div>
 
               <MyCard cardCalss="lg:col-span-3" contentClass="pt-6">

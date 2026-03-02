@@ -38,6 +38,7 @@
   --sidebar-ring: 217.2 91.2% 59.8%;
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
+
 }
 
 /* Include your .dark block here from your previous message */
@@ -66,6 +67,9 @@
 
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
 
   ---container-center: true;
   --container-padding: 2rem;

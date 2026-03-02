@@ -1,12 +1,14 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import MyCard from "../templates/MyCard";
+import React from "react";
+import { contactDetails } from "@/types/store";
 
-const ContactDetails = () => {
+const ContactDetails: React.FC<{data:contactDetails}> = ({data}) => {
     return <>
         {[
-            { icon: Phone, label: "Phone", value: "07741304657" },
-            { icon: Mail, label: "Email", value: "thumbengineeringconstruction@yahoo.com" },
-            { icon: MapPin, label: "Office", value: "11 Marshstreet North, Dartford, DA1 5WF " },
+            { icon: Phone, label: "Phone", value: data.phone },
+            { icon: Mail, label: "Email", value: data.email },
+            { icon: MapPin, label: "Office", value: data.address },
         ].map((item) => (
             <MyCard key={item.label} cardCalss="" contentClass="flex items-start gap-4 pt-6">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
