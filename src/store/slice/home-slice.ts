@@ -1,6 +1,6 @@
-import { homeData, homeStoreData, testimonialData, TestimonialStoreData } from "@/types/store";
+import { homeData, homeStoreData } from "@/types/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { fetchHomeData, fetchTestimonialData } from "../reducer/actionReducer";
+import { fetchHomeData } from "../reducer/actionReducer";
 
 const intitalState: homeStoreData = { 
     data:null,

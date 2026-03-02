@@ -16,7 +16,7 @@ export interface serviceSliceData {
 }
 
 export interface serviceStoreData {
-  data: serviceSliceData;
+  data: serviceSliceData|null;
   loading: boolean;
   error: boolean;
 }
