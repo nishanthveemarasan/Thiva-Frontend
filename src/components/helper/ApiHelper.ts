@@ -30,7 +30,7 @@ class ApiHelper {
     setLoading?.(true);
     try {
       const timestamp = Date.now().toString();
-      const secret = import.meta.env.VITE_APP_SERVICE_KEY; // Your random string
+      const secret: string = process.env.APP_SERVICE_KEY as string; // Your random string
       let dataToSign = `${method}${endpoint}${timestamp}`;
       const hash = CryptoJS.HmacSHA256(dataToSign, secret);
       const signature = hash.toString(CryptoJS.enc.Hex);
