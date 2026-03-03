@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
-import { makeStore } from "@/store/store";
+import { contactInfoStoreActions, makeStore } from "@/store/store";
 import { fetchContactData } from "@/store/reducer/actionReducer";
 import { contactDetails } from "@/types/store";
 import Spinner from "@/components/ui/Spinner";
@@ -8,11 +8,17 @@ import PageError from "@/components/Error/PageError";
 import ContactDetails from "@/components/ContactPage/ContactDetails";
 import MyCard from "@/components/templates/MyCard";
 import ContactForm from "@/components/ContactPage/ContactForm";
+import { useAppDispatch } from "@/store/hooks";
 
 const Contact: React.FC<{data:contactDetails, error:boolean}> = ({data, error}) => {
   if(!data){
     return <Spinner className="min-h-screen" />
   }
+
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+      dispatch(contactInfoStoreActions.addContactData(data));
+      }, [])
 
   return (
     <Layout>

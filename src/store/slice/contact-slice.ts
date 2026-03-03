@@ -5,7 +5,7 @@ import { fetchContactData } from "../reducer/actionReducer";
 const intitalState: StoreData = { 
     data:null,
     loading: false,
-    error: false
+    error: false,
 }
 
 const contactSlice = createSlice({

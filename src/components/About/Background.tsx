@@ -10,9 +10,10 @@ const Background = ({ data }: { data: personalInfo }) => {
                     className="w-56 h-56 rounded-full object-cover shadow-lg"
                 />
             </div>
-            <h2 className="mt-3 text-3xl font-bold text-center">
-                {`${data.first_name} ${data.last_name}`}
-            </h2>
+            <div className="mt-3 text-3xl font-bold text-center">
+                <div>{`${data.first_name} ${data.last_name}`}</div>
+                <div className="text-lg text-muted-foreground">{data.qualification}</div>
+            </div>
             
             <div className="prose prose-lg text-muted-foreground space-y-4 text-justify mt-4">
                 <div dangerouslySetInnerHTML={{ __html: data.biography }} />

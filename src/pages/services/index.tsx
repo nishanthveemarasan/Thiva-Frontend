@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
-import { makeStore } from "@/store/store";
+import { contactInfoStoreActions, makeStore } from "@/store/store";
 import { fetchServicesData } from "@/store/reducer/actionReducer";
 import { serviceSliceData } from "@/types/store";
 import Spinner from "@/components/ui/Spinner";
@@ -8,11 +8,16 @@ import PageError from "@/components/Error/PageError";
 import ServiceHeader from "@/components/ServicePage/ServiceHeader";
 import ServiceList from "@/components/ServicePage/ServiceList";
 import ServiceFooter from "@/components/ServicePage/ServiceFooter";
+import { useAppDispatch } from "@/store/hooks";
 
-const Services:React.FC<{ data: serviceSliceData, error: boolean }> = ({ data, error }) => {
+const Services: React.FC<{ data: serviceSliceData, error: boolean }> = ({ data, error }) => {
   if (!data) {
     return <Spinner className="min-h-screen" />
   }
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(contactInfoStoreActions.addContactData(data.contact_info));
+  }, [])
   return (
     <Layout>
       {error ? <PageError /> : <>

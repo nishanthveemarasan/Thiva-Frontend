@@ -4,15 +4,23 @@ export interface StoreData {
   error: boolean;
 }
 
+
+
 export interface TestimonialStoreData {
-  data: testimonialData[] | [];
+  data: testimonialSliceData | null;
   loading: boolean;
   error: boolean;
 }
 
+export interface testimonialSliceData {
+  testimonials: testimonialData[] | [];
+  contact_info: contactDetails;
+}
+
 export interface serviceSliceData {
   services: serviceData[] | [];
-  year_of_experience: number
+  year_of_experience: number;
+  contact_info: contactDetails;
 }
 
 export interface serviceStoreData {
@@ -70,11 +78,15 @@ export interface skillData {
 export interface personalInfo {
   first_name: string;
   last_name: string;
+  qualification: string;
   biography: string;
   bottom_line: string;
   image: {
     full_url: string;
   };
+  email?: string;
+  phone?: string;
+  address?: string;
 }
 
 export interface profileData {
@@ -103,11 +115,14 @@ export interface projectData {
   image: imageData;
 }
 
+
+
 export interface homeData {
   services: serviceData[];
   content: homeContent;
   projects: projectData[];
-  year_of_experience: number
+  year_of_experience: number;
+  contact_info: contactDetails;
 }
 
 export interface homeStoreData {

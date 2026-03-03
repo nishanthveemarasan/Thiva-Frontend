@@ -5,6 +5,7 @@ import serviceSlice from "./slice/service-slice";
 import { profile } from "console";
 import profileSlice from "./slice/profile-slice";
 import homeSlice from "./slice/home-slice";
+import contactInfoSlice from "./slice/contact-info-slice";
 
  const store = configureStore({
     reducer: {
@@ -13,6 +14,7 @@ import homeSlice from "./slice/home-slice";
         serviceStore: serviceSlice.reducer,
         profileStore: profileSlice.reducer,
         homeStore: homeSlice.reducer,
+        contactInfoStore: contactInfoSlice.reducer,
     }
 });
 
@@ -28,4 +30,5 @@ export const testimonialStoreActions = testimonialSlice.actions;
 export const serviceStoreActions = serviceSlice.actions;
 export const profileStoreActions = profileSlice.actions;
 export const homeStoreActions = homeSlice.actions;
+export const contactInfoStoreActions = contactInfoSlice.actions;
 

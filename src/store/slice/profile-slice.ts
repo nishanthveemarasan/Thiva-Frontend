@@ -5,7 +5,7 @@ import { fetchProfileData } from "../reducer/actionReducer";
 const intitalState: profileStoreData = { 
     data:null,
     loading: false,
-    error: false
+    error: false,
 }
 
 const profileSlice = createSlice({

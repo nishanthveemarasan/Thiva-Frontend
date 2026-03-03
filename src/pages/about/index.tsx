@@ -2,9 +2,9 @@ import { Award, Users, Clock, CheckCircle } from "lucide-react";
 
 
 import Layout from "@/components/Layout";
-import { makeStore } from "@/store/store";
+import { contactInfoStoreActions, makeStore } from "@/store/store";
 import { fetchProfileData } from "@/store/reducer/actionReducer";
-import { profileData } from "@/types/store";
+import { contactDetails, profileData } from "@/types/store";
 import Spinner from "@/components/ui/Spinner";
 import PageError from "@/components/Error/PageError";
 import Background from "@/components/About/Background";
@@ -12,6 +12,8 @@ import Specialisation from "@/components/About/Specialisation";
 import Experiences from "@/components/About/Experiences";
 import Education from "@/components/About/Education";
 import Skills from "@/components/About/Skills";
+import { useAppDispatch } from "@/store/hooks";
+import { useEffect } from "react";
 
 const stats = [
   { icon: Award, value: "17+", label: "Years Experience" },
@@ -25,6 +27,16 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
   if(!data){
     return <Spinner className="min-h-screen" />
   }
+
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+      const contactData: contactDetails | null = {
+        email: data?.profile?.email ?? "",
+        phone: data?.profile?.phone ?? "",
+        address: data?.profile?.address ?? "",
+      }
+      dispatch(contactInfoStoreActions.addContactData(contactData));
+      }, [])
  return <Layout>
     {
       error ? <PageError /> : <>
@@ -37,7 +49,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
 
       <Background data={data.profile} />
 
-     <section className="py-16 bg-muted">
+     {/* <section className="py-16 bg-muted">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s) => (
@@ -49,7 +61,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Specialisation list={data.services} /> 
 

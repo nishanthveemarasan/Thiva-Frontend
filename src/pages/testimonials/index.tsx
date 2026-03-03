@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
-import { makeStore } from "@/store/store";
+import { contactInfoStoreActions, makeStore } from "@/store/store";
 import { fetchTestimonialData } from "@/store/reducer/actionReducer";
-import { testimonialData } from "@/types/store";
+import { testimonialData, testimonialSliceData } from "@/types/store";
 import Spinner from "@/components/ui/Spinner";
 import PageError from "@/components/Error/PageError";
 import TestimonialList from "@/components/TestimonialPage/TestimonialList";
+import { useAppDispatch } from "@/store/hooks";
 
 
-const Testimonials: React.FC<{data:testimonialData[],error: boolean }> = ({data, error}) => {
+const Testimonials: React.FC<{data:testimonialSliceData,error: boolean }> = ({data, error}) => {
   if(!data){
     return <Spinner className="min-h-screen" />
   }
+  const dispatch = useAppDispatch();
+    useEffect(() => {
+      dispatch(contactInfoStoreActions.addContactData(data.contact_info));
+      }, [])
  return <Layout>
     {error ? <PageError /> : <>
       <section className="bg-primary text-primary-foreground py-20">
@@ -24,7 +29,7 @@ const Testimonials: React.FC<{data:testimonialData[],error: boolean }> = ({data,
       <section className="py-16">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <TestimonialList list={data} />
+            <TestimonialList list={data.testimonials} />
           </div>
         </div>
       </section>
