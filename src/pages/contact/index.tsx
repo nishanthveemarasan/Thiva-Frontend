@@ -9,6 +9,7 @@ import ApiHelper from "@/components/helper/ApiHelper";
 import FormInput from "@/components/formUI/formInput";
 import FormTextArea from "@/components/formUI/formTextArea";
 import Layout from "@/components/Layout";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -137,6 +138,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <PageMetaHeader title="Client Testimonials - Trusted Civil Engineering Solutions" pageUrl="/testimonials" description="Discover what our clients have to say about our civil engineering services. Read testimonials from property developers, municipal directors, architects, and more." />
       <section className="bg-primary text-primary-foreground py-20">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>

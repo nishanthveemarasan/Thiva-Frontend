@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Layout from "@/components/Layout";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const services = [
   {
@@ -34,6 +35,7 @@ const services = [
 const Services = () => {
   return (
     <Layout>
+      <PageMetaHeader title="Our Services - Expert Civil Engineering Solutions" pageUrl="/services" description="Explore our range of civil engineering services including general engineering, construction management, infrastructure development, and quantity surveying. Delivering quality and precision for over 15 years." />
       {/* Hero */}
       <section className="bg-primary py-20">
         <div className="container text-center">

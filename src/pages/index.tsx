@@ -22,6 +22,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import React from "react";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const services = [
   { icon: Building2, title: "General Civil Engineering", desc: "Comprehensive civil engineering solutions from structural design to site development." },
@@ -53,6 +54,7 @@ const Home = () => {
   );
   return <Layout>
     {/* Hero */}
+    <PageMetaHeader title="Home - Civil Engineer Portfolio" pageUrl="/" description="Professional civil engineering services specializing in construction management, infrastructure development, and quantity surveying. Delivering quality and precision on every project." />
     <section className="relative min-h-[80vh] flex items-center">
       <div className="absolute inset-0">
         <img src="/next/images/general/hero-bg.jpg" alt="Construction site" className="w-full h-full object-cover" />

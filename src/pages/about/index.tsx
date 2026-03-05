@@ -4,6 +4,7 @@ import { Building2, HardHat, Ruler, BarChart3, Award, Users, Clock, CheckCircle,
 import Layout from "@/components/Layout";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const specializations = [
   { icon: Building2, title: "General Civil Engineering", desc: "Structural analysis, site development, and comprehensive engineering design." },
@@ -37,6 +38,7 @@ const skills = [
 
 const About = () => (
   <Layout>
+    <PageMetaHeader title="About Me - Experienced Civil Engineer" pageUrl="/about" description="Learn about my professional background, specializations, and experience as a civil engineer with over 15 years in the industry. Discover how I can help with your next project." />
     {/* Hero */}
     <section className="bg-primary text-primary-foreground py-20">
       <div className="container">
