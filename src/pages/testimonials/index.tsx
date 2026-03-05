@@ -20,7 +20,7 @@ const Testimonials: React.FC<{data:testimonialSliceData,error: boolean }> = ({da
       }, [])
  return <Layout>
     {error ? <PageError /> : <>
-    <PageMetaHeader title="Testimonials - Thumb Engineering Construction" pageUrl="/testimonials" description="Read what our clients have to say about their experience working with Thumb Engineering Construction. Our commitment to excellence and client satisfaction is reflected in the testimonials from our valued customers." />
+    <PageMetaHeader title="Client Testimonials | Thumb Engineering Construction" keywords="construction company reviews, thumb engineering construction testimonials, client reviews construction UK" pageUrl="/testimonials" description="Read testimonials from satisfied clients of Thumb Engineering Construction who trusted our construction and engineering services." />
       <section className="bg-primary text-primary-foreground py-20">
       <div className="container">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Testimonials</h1>

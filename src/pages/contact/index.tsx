@@ -24,7 +24,7 @@ const Contact: React.FC<{ data: contactDetails, error: boolean }> = ({ data, err
   return (
     <Layout>
       {error ? <PageError /> : <>
-        <PageMetaHeader title="Contact Us - Thumb Engineering Construction" pageUrl="/contact" description="Get in touch with Thumb Engineering Construction for all your construction needs. Whether you have questions, want to discuss a project, or need a quote, our team is here to help. Contact us today and let's build something great together." />
+        <PageMetaHeader title="Contact Us | Thumb Engineering Construction" keywords="contact construction company UK, thumb engineering construction contact, engineering services contact" pageUrl="/contact" description="Contact Thumb Engineering Construction for professional construction and engineering services in the UK. Get in touch for project inquiries." />
         <section className="bg-primary text-primary-foreground py-20">
           <div className="container">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>

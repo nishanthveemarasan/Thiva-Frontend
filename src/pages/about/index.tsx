@@ -41,7 +41,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
  return <Layout>
     {
       error ? <PageError /> : <>
-      <PageMetaHeader title="About Us - Thumb Engineering Construction" pageUrl="/about" description="Learn more about Thumb Engineering Construction, our mission, values, and the team behind our success. With years of experience in the construction industry, we are committed to delivering high-quality projects that exceed our clients' expectations." />
+      <PageMetaHeader title="About Us | Thumb Engineering Construction" keywords="about thumb engineering construction, construction company UK, engineering contractors UK" pageUrl="/about" description="Learn about Thumb Engineering Construction, a trusted construction and engineering company delivering high-quality building services across the UK." />
        <section className="bg-primary text-primary-foreground py-20">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>

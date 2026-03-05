@@ -22,7 +22,7 @@ const Services: React.FC<{ data: serviceSliceData, error: boolean }> = ({ data, 
   return (
     <Layout>
       {error ? <PageError /> : <>
-      <PageMetaHeader title="Our Services - Thumb Engineering Construction" pageUrl="/services" description="Explore the comprehensive range of construction services offered by Thumb Engineering Construction. From residential to commercial projects, we deliver excellence in every aspect of construction, ensuring your vision becomes a reality." />
+      <PageMetaHeader title="Our Services | Thumb Engineering Construction" keywords="construction services UK, building services UK, engineering contractors, construction company services" pageUrl="/services" description="Explore the professional construction and engineering services offered by Thumb Engineering Construction including building, renovation, and project management." />
         <ServiceHeader year={data.year_of_experience} />
         <ServiceList list={data.services} />
         <ServiceFooter />
