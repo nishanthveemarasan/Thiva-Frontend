@@ -24,7 +24,7 @@ const Home: React.FC<{ data: homeData, error: boolean }> = ({ data, error }) => 
   }, [])
   return <Layout >
     {error ? <PageError /> : <>
-      <PageMetaHeader title="Thumb Engineering Construction | Construction & Engineering Services UK | Construction Company UK" keywords="construction company UK, engineering services UK, building contractors UK, thumb engineering construction" pageUrl="/" description="Thumb Engineering Construction provides professional construction, building, and engineering services in the UK. Reliable contractors for residential and commercial projects." />
+      <PageMetaHeader title="Thumb Engineering Construction | Construction & Engineering Services UK | Construction Company UK" keywords="construction company UK, engineering services UK, building contractors UK, thumb engineering construction" pageUrl="/" description="Thumb Engineering Construction provides professional civil engineering and construction services, specializing in construction management, infrastructure development, and quantity surveying. Delivering quality and precision on every project." />
       <HomeHeader data={data.content} year={data.year_of_experience} />
       <CarouselImages list={data.content.images} />
 
