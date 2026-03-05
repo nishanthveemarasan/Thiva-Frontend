@@ -67,8 +67,6 @@ export const fetchHomeData = createAsyncThunk(
         endpoint: "api/pages/home",
         method: "GET",
       });
-      console.log(response)
-
       if (!response.success) {
         return rejectWithValue("Failed to fetch account data");
       }

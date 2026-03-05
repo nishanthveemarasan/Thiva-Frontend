@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   // reactCompiler is experimental in some Next 15 versions
-  experimental: {
-    reactCompiler: true, 
-  },
+  output: 'standalone', // Crucial: This bundles dependencies
+  reactStrictMode: true,
   // basePath: '/next',
   // assetPrefix: '/next',
 
