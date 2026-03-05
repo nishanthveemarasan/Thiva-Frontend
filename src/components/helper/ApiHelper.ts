@@ -41,7 +41,7 @@ class ApiHelper {
         },
         data: body
       });
-      console.log(result)
+      // console.log(result)
       return {
         success: true,
         result: result.data
