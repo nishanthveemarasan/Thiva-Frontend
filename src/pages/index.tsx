@@ -50,7 +50,7 @@ const projects = [
 const Home = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true })
-);
+  );
   return <Layout>
     {/* Hero */}
     <section className="relative min-h-[80vh] flex items-center">
@@ -59,7 +59,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-primary/80" />
       </div>
       <div className="container relative z-10 py-20">
-        <div className="max-w-2xl">
+        <div className="text-center">
           <Badge className="mb-4 bg-secondary text-secondary-foreground">Civil Engineer · 15+ Years Experience</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
             Building the Future,<br />One Structure at a Time
@@ -67,7 +67,7 @@ const Home = () => {
           <p className="text-lg text-primary-foreground/80 mb-8 leading-relaxed">
             Professional civil engineering services specializing in construction management, infrastructure development, and quantity surveying. Delivering quality and precision on every project.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" asChild className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
               <Link href="/contact">Get in Touch</Link>
             </Button>
@@ -81,45 +81,45 @@ const Home = () => {
 
     {/* Image Carousel */}
     <section className="py-12 bg-muted">
-            <div className="container px-4">
-                <div className="text-center mb-8">
-                    <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">Our Work in Action</h2>
-                    <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
-                        A glimpse into our ongoing and completed engineering projects.
-                    </p>
-                </div>
-                
-                <div className="mx-auto max-w-5xl">
-                    <Carousel 
-                        opts={{ loop: true }} 
-                        plugins={[plugin.current]}
-                        className="w-full"
-                    >
-                        <CarouselContent>
-                            {carouselImages.map((img) => (
-                                <CarouselItem key={img.alt}>
-                                    <div className="relative overflow-hidden rounded-xl shadow-md group">
-                                        {/* h-[300px] sets a fixed height on mobile
+      <div className="container px-4">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">Our Work in Action</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
+            A glimpse into our ongoing and completed engineering projects.
+          </p>
+        </div>
+
+        <div className="mx-auto max-w-5xl">
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[plugin.current]}
+            className="w-full"
+          >
+            <CarouselContent>
+              {carouselImages.map((img) => (
+                <CarouselItem key={img.alt}>
+                  <div className="relative overflow-hidden rounded-xl shadow-md group">
+                    {/* h-[300px] sets a fixed height on mobile
                                             md:h-[450px] increases it for desktop
                                             object-cover ensures the image fills the area without distorting
                                         */}
-                                        <img
-                                            src={img.src}
-                                            alt={img.alt}
-                                            className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                                        <p className="absolute bottom-4 left-6 right-6 text-lg font-semibold text-white">
-                                            {img.caption}
-                                        </p>
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                    </Carousel>
-                </div>
-            </div>
-        </section>
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <p className="absolute bottom-4 left-6 right-6 text-lg font-semibold text-white">
+                      {img.caption}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      </div>
+    </section>
     {/* Services */}
     <section className="py-20">
       <div className="container">
