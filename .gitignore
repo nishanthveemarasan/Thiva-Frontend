@@ -42,3 +42,5 @@ next-env.d.ts
 
 src/components/helper/signature.ts
 public/googlef1d62338cea7bddb.html
+public/sitemap.xml
+public/robots.txt
