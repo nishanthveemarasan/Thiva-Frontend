@@ -1,7 +1,7 @@
 // import Image from "next/image";
 // import { Geist, Geist_Mono } from "next/font/google";
 import Layout from "@/components/Layout";
-
+import Autoplay from "embla-carousel-autoplay";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -21,6 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import heroBg from "@/assets/hero-bg.jpg";
 import Link from "next/link";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import React from "react";
 
 const services = [
   { icon: Building2, title: "General Civil Engineering", desc: "Comprehensive civil engineering solutions from structural design to site development." },
@@ -47,11 +48,14 @@ const projects = [
 ];
 
 const Home = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+);
   return <Layout>
     {/* Hero */}
     <section className="relative min-h-[80vh] flex items-center">
       <div className="absolute inset-0">
-        <img src="/images/general/hero-bg.jpg" alt="Construction site" className="w-full h-full object-cover" />
+        <img src="/next/images/general/hero-bg.jpg" alt="Construction site" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/80" />
       </div>
       <div className="container relative z-10 py-20">
@@ -76,38 +80,46 @@ const Home = () => {
     </section>
 
     {/* Image Carousel */}
-    <section className="py-16 bg-muted">
-      <div className="container">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Work in Action</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">A glimpse into our ongoing and completed engineering projects.</p>
-        </div>
-        <div className="mx-auto max-w-5xl px-12">
-          <Carousel opts={{ loop: true }} className="w-full">
-            <CarouselContent>
-              {carouselImages.map((img) => (
-                <CarouselItem key={img.alt}>
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      className="w-full aspect-[12/5] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <p className="absolute bottom-4 left-6 text-lg font-semibold text-white">
-                      {img.caption}
+    <section className="py-12 bg-muted">
+            <div className="container px-4">
+                <div className="text-center mb-8">
+                    <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">Our Work in Action</h2>
+                    <p className="text-muted-foreground max-w-xl mx-auto text-sm md:text-base">
+                        A glimpse into our ongoing and completed engineering projects.
                     </p>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      </div>
-    </section>
-
+                </div>
+                
+                <div className="mx-auto max-w-5xl">
+                    <Carousel 
+                        opts={{ loop: true }} 
+                        plugins={[plugin.current]}
+                        className="w-full"
+                    >
+                        <CarouselContent>
+                            {carouselImages.map((img) => (
+                                <CarouselItem key={img.alt}>
+                                    <div className="relative overflow-hidden rounded-xl shadow-md group">
+                                        {/* h-[300px] sets a fixed height on mobile
+                                            md:h-[450px] increases it for desktop
+                                            object-cover ensures the image fills the area without distorting
+                                        */}
+                                        <img
+                                            src={img.src}
+                                            alt={img.alt}
+                                            className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                                        <p className="absolute bottom-4 left-6 right-6 text-lg font-semibold text-white">
+                                            {img.caption}
+                                        </p>
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                    </Carousel>
+                </div>
+            </div>
+        </section>
     {/* Services */}
     <section className="py-20">
       <div className="container">

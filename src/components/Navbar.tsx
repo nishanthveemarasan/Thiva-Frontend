@@ -30,7 +30,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold text-primary">
           {/* <HardHat className="h-6 w-6" />
           <span>CivilPro</span> */}
-          <img src="/images/logos/main-logo.png" className="w-32 h-10"/>
+          <img src="/next/images/logos/main-logo.png" className="w-32 h-10"/>
         </Link>
 
         {/* Desktop nav */}
