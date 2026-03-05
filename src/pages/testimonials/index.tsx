@@ -7,6 +7,7 @@ import Spinner from "@/components/ui/Spinner";
 import PageError from "@/components/Error/PageError";
 import TestimonialList from "@/components/TestimonialPage/TestimonialList";
 import { useAppDispatch } from "@/store/hooks";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 
 const Testimonials: React.FC<{data:testimonialSliceData,error: boolean }> = ({data, error}) => {
@@ -19,6 +20,7 @@ const Testimonials: React.FC<{data:testimonialSliceData,error: boolean }> = ({da
       }, [])
  return <Layout>
     {error ? <PageError /> : <>
+    <PageMetaHeader title="Testimonials - Thumb Engineering Construction" pageUrl="/testimonials" description="Read what our clients have to say about their experience working with Thumb Engineering Construction. Our commitment to excellence and client satisfaction is reflected in the testimonials from our valued customers." />
       <section className="bg-primary text-primary-foreground py-20">
       <div className="container">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Testimonials</h1>

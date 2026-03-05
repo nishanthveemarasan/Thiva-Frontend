@@ -9,6 +9,7 @@ import ServiceHeader from "@/components/ServicePage/ServiceHeader";
 import ServiceList from "@/components/ServicePage/ServiceList";
 import ServiceFooter from "@/components/ServicePage/ServiceFooter";
 import { useAppDispatch } from "@/store/hooks";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const Services: React.FC<{ data: serviceSliceData, error: boolean }> = ({ data, error }) => {
   if (!data) {
@@ -21,6 +22,7 @@ const Services: React.FC<{ data: serviceSliceData, error: boolean }> = ({ data, 
   return (
     <Layout>
       {error ? <PageError /> : <>
+      <PageMetaHeader title="Our Services - Thumb Engineering Construction" pageUrl="/services" description="Explore the comprehensive range of construction services offered by Thumb Engineering Construction. From residential to commercial projects, we deliver excellence in every aspect of construction, ensuring your vision becomes a reality." />
         <ServiceHeader year={data.year_of_experience} />
         <ServiceList list={data.services} />
         <ServiceFooter />

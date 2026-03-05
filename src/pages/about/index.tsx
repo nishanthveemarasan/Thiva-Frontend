@@ -14,6 +14,7 @@ import Education from "@/components/About/Education";
 import Skills from "@/components/About/Skills";
 import { useAppDispatch } from "@/store/hooks";
 import { useEffect } from "react";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
 const stats = [
   { icon: Award, value: "17+", label: "Years Experience" },
@@ -40,6 +41,7 @@ const About = ({data, error}:{data:profileData, error: boolean}) => {
  return <Layout>
     {
       error ? <PageError /> : <>
+      <PageMetaHeader title="About Us - Thumb Engineering Construction" pageUrl="/about" description="Learn more about Thumb Engineering Construction, our mission, values, and the team behind our success. With years of experience in the construction industry, we are committed to delivering high-quality projects that exceed our clients' expectations." />
        <section className="bg-primary text-primary-foreground py-20">
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Me</h1>

@@ -9,26 +9,28 @@ import ContactDetails from "@/components/ContactPage/ContactDetails";
 import MyCard from "@/components/templates/MyCard";
 import ContactForm from "@/components/ContactPage/ContactForm";
 import { useAppDispatch } from "@/store/hooks";
+import PageMetaHeader from "@/components/Header/PageMetaHeader";
 
-const Contact: React.FC<{data:contactDetails, error:boolean}> = ({data, error}) => {
-  if(!data){
+const Contact: React.FC<{ data: contactDetails, error: boolean }> = ({ data, error }) => {
+  if (!data) {
     return <Spinner className="min-h-screen" />
   }
 
-    const dispatch = useAppDispatch();
-    useEffect(() => {
-      dispatch(contactInfoStoreActions.addContactData(data));
-      }, [])
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(contactInfoStoreActions.addContactData(data));
+  }, [])
 
   return (
     <Layout>
       {error ? <PageError /> : <>
+        <PageMetaHeader title="Contact Us - Thumb Engineering Construction" pageUrl="/contact" description="Get in touch with Thumb Engineering Construction for all your construction needs. Whether you have questions, want to discuss a project, or need a quote, our team is here to help. Contact us today and let's build something great together." />
         <section className="bg-primary text-primary-foreground py-20">
-        <div className="container">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl">Have a project in mind? Let's discuss how I can help.</p>
-        </div>
-      </section>
+          <div className="container">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>
+            <p className="text-primary-foreground/80 text-lg max-w-2xl">Have a project in mind? Let's discuss how I can help.</p>
+          </div>
+        </section>
 
         <section className="py-16">
 
