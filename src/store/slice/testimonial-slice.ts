@@ -1,9 +1,9 @@
-import { testimonialData, TestimonialStoreData } from "@/types/store";
+import { testimonialData, testimonialSliceData, TestimonialStoreData } from "@/types/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchTestimonialData } from "../reducer/actionReducer";
 
 const intitalState: TestimonialStoreData = { 
-    data:[],
+    data:null,
     loading: false,
     error: false
 }
@@ -20,7 +20,7 @@ const testimonialSlice = createSlice({
             state.loading = true;
             state.error = false;
         })
-        .addCase(fetchTestimonialData.fulfilled, (state, action: PayloadAction<testimonialData[]>) => {
+        .addCase(fetchTestimonialData.fulfilled, (state, action: PayloadAction<testimonialSliceData>) => {
             state.data = action.payload;
             state.loading = false;
             state.error = false;
