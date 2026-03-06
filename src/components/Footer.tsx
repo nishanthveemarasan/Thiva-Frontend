@@ -31,7 +31,7 @@ const Footer = () => {
         </nav>
       </div>
 
-     { <div>
+     {data && <div>
         <h4 className="font-display text-lg font-semibold mb-4">Get in Touch</h4>
         <div className="flex flex-col gap-3 text-sm opacity-80">
           <div className="flex items-center gap-2"><Phone className="h-4 w-4" />{data?.phone}</div>

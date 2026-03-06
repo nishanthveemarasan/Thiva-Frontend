@@ -11,8 +11,20 @@ const Projects = ({ list }: { list: projectData[] }) => {
                 <p className="text-muted-foreground max-w-xl mx-auto">A selection of completed projects demonstrating quality and expertise.</p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {list.map((p) => (
-                    <Card key={p.name} className="overflow-hidden group hover:shadow-lg transition-shadow">
+                {list.map((p, i) => {
+                    const remainder = list.length % 3
+                    const isLastRow = i >= list.length - remainder
+
+                    let extraClass = ""
+
+                    if (remainder === 1 && isLastRow) {
+                        extraClass = "lg:col-start-2"
+                    }
+
+                    if (remainder === 2 && isLastRow && i === list.length - 2) {
+                        extraClass = "lg:col-start-1"
+                    }
+                    return <Card key={p.name} className={`overflow-hidden group hover:shadow-lg transition-shadow ${extraClass}`}>
                         <div className="aspect-[3/2] overflow-hidden">
                             <img src={p.image.full_url} alt={p.image.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
@@ -24,7 +36,7 @@ const Projects = ({ list }: { list: projectData[] }) => {
                             </p>
                         </CardContent>
                     </Card>
-                ))}
+})}
             </div>
         </div>
     </section>

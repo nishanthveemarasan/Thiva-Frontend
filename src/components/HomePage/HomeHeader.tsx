@@ -5,14 +5,14 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 const HomeHeader = ({ data, year }: { data: homeContent, year:number }) => {
     return <>
-        <section className="relative min-h-[80vh] flex items-center">
+        <section className="relative sm:min-h-[80vh] min-h-[50vh] flex items-center">
             <div className="absolute inset-0">
                 <img src="/images/general/hero-bg.jpg" alt="Construction site" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-primary/80" />
             </div>
-            <div className="container relative z-10 py-20 ">
+            <div className="container relative z-10 py-10 sm:py-15 ">
                 <div className="text-center">
-                    <Badge className="mb-4 bg-secondary text-secondary-foreground">Civil Engineer · {year}+ Years Experience</Badge>
+                    <Badge className="mb-4 bg-secondary text-secondary-foreground">{year}+ Years Building Reliable Engineering Solutions</Badge>
                     <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight" dangerouslySetInnerHTML={{ __html: data.title }} >
                         
                     </h1>
