@@ -48,6 +48,7 @@ class ApiHelper {
       }
       
     } catch (e:any) {
+      console.log('API Request Error:', e?.response || "No response from server");
       console.log('inside  catch')
       console.log(e.message || "something went wrong")
       return {

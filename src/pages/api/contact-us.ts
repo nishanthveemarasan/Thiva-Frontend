@@ -10,6 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           method: "POST",
           body: formData,
         });
+        console.log("API Response:", response);
     
         if (response.success) {
           return res.status(200).json(response);

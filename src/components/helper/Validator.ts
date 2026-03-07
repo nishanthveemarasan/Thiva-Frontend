@@ -7,7 +7,7 @@ export const email = (value: string): boolean =>
         value,
     )
 export const phone = (value: string): boolean =>
-    /^\+?[1-9]\d{1,14}$/.test(
+    /^\+?[0-9]\d{1,14}$/.test(
         value,
     )
 
