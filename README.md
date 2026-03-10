@@ -1,40 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Thiva Engineering & Construction - Frontend
 
-## Getting Started
+A high-performance, SEO-optimized business platform built with **Next.js**, featuring a decoupled architecture powered by a **Laravel API**. This project demonstrates modern frontend best practices, including Server-Side Rendering (SSR), Type-safety, and automated testing.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Key Features & Implementation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔍 Advanced SEO & Performance
+* **Custom Meta Management:** Manually configured unique titles, meta descriptions, and header tags for every page to ensure maximum relevance for search engine crawlers.
+* **Search Engine Indexing:** Implemented a custom `sitemap.xml` and `robots.txt` to optimize site architecture discovery and crawl budget.
+* **Core Web Vitals:** Optimized for performance with `next/image` for lazy loading and Tailwind CSS for minimal CSS bundle sizes.
+* **Server-Side Rendering (SSR):** Leveraged Next.js to ensure all content is pre-rendered and visible to search engines on the first request.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 🏗️ Architecture & State
+* **Type-Safe Development:** Full TypeScript implementation to catch errors at compile-time and improve developer experience.
+* **Component-Driven UI:** Built using a modular approach with reusable UI components, ensuring consistency and easy maintenance.
+* **Headless Integration:** Consumes data from a custom Laravel REST API, demonstrating a clear separation of concerns between frontend and backend.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 🧪 Quality Assurance
+* **Unit Testing:** Comprehensive test suite using **Jest** and **React Testing Library** covering critical components and page layouts to ensure stability.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+* **Framework:** [Next.js](https://nextjs.org/) (React)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Testing:** [Jest](https://jestjs.io/) & React Testing Library
+* **Backend:** Laravel (REST API)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## 🚦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/nishanthveemarasan/Thiva-Frontend.git](https://github.com/nishanthveemarasan/Thiva-Frontend.git)
