@@ -28,7 +28,7 @@ A high-performance, SEO-optimized business platform built with **Next.js**, feat
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
 * **Testing:** [Jest](https://jestjs.io/) & React Testing Library
-* **Backend:** Laravel (REST API)
+* **Backend:** [Laravel 12 (REST API)](https://laravel.com/docs/12.x/)
 
 ---
 
