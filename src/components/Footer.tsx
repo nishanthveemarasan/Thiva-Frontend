@@ -12,9 +12,7 @@ const Footer = () => {
   return <footer className="border-t bg-primary text-primary-foreground">
     <div className="container py-12 grid gap-8 md:grid-cols-3">
       <div>
-        <div className="flex items-center gap-2 font-display text-xl font-bold mb-4">
-          <img src="images/logos/main-logo.png" className="w-50 h-14"/>
-        </div>
+      <h4 className="font-display text-lg font-semibold mb-4">About Us</h4>
         <p className="text-sm opacity-80 leading-relaxed break-words whitespace-normal">
           Professional civil engineering services — from concept to completion. Delivering excellence in construction management, infrastructure, and quantity surveying.
         </p>
@@ -34,8 +32,14 @@ const Footer = () => {
      {data && <div>
         <h4 className="font-display text-lg font-semibold mb-4">Get in Touch</h4>
         <div className="flex flex-col gap-3 text-sm opacity-80">
-          <div className="flex items-center gap-2"><Phone className="h-4 w-4" />{data?.phone}</div>
-          <div className="flex items-center gap-2 break-words whitespace-normal"><Mail className="h-4 w-4" /> {data?.email}</div>
+          <div className="flex items-center gap-2">
+            <Phone className="h-4 w-4" />
+            <a href={`tel:${data?.phone}`} className="hover:text-orange-500 transition-colors">{data?.phone}</a>
+            </div>
+          <div className="flex items-center gap-2 break-words whitespace-normal">
+            <Mail className="h-4 w-4" /> 
+            <a href={`mailto:${data?.email}`} className="hover:text-orange-500 transition-colors">{data?.email}</a>
+            </div>
           <div className="flex items-center gap-2 break-words whitespace-normal"><MapPin className="h-4 w-4" /> {data?.address} </div>
         </div>
       </div>}

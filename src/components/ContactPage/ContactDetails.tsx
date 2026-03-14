@@ -17,7 +17,10 @@ const ContactDetails: React.FC<{data:contactDetails}> = ({data}) => {
                 <div className="min-w-0 flex-1">
                     <p className="font-semibold text-sm">{item.label}</p>
                     <p className="text-sm text-muted-foreground break-all md:break-words">
-                        {item.value}
+                        {
+                            item.label === "Email" ? <a href={`mailto:${item.value}`} className="hover:text-primary transition-colors">{item.value}</a> :
+                            item.label === "Phone" ? <a href={`tel:${item.value}`} className="hover:text-primary transition-colors">{item.value}</a> : item.value
+                        }
                     </p>
                 </div>
 

@@ -1,15 +1,21 @@
-export interface StoreData {
-  data: contactDetails | null;
+
+interface loadingData {
   loading: boolean;
   error: boolean;
 }
 
+interface periodData{
+  from: number;
+  to: number | string;
+}
+export interface StoreData extends loadingData {
+  data: contactDetails | null;
+}
 
 
-export interface TestimonialStoreData {
+
+export interface TestimonialStoreData extends loadingData {
   data: testimonialSliceData | null;
-  loading: boolean;
-  error: boolean;
 }
 
 export interface testimonialSliceData {
@@ -23,16 +29,12 @@ export interface serviceSliceData {
   contact_info: contactDetails;
 }
 
-export interface serviceStoreData {
+export interface serviceStoreData extends loadingData {
   data: serviceSliceData|null;
-  loading: boolean;
-  error: boolean;
 }
 
-export interface profileStoreData {
+export interface profileStoreData extends loadingData {
   data: profileData | null;
-  loading: boolean;
-  error: boolean;
 }
 export interface contactDetails {
   email: string;
@@ -55,19 +57,15 @@ export interface serviceData {
   special_point?: string;
 }
 
-export interface experienceData {
+export interface experienceData extends periodData{
   company: string;
   role: string;
-  from: number;
-  to: number | string;
   description: string;
 }
 
-export interface educationData {
+export interface educationData extends periodData{
   course: string;
   institution: string;
-  from: number;
-  to: number | string;
   description: string;
 }
 
@@ -75,7 +73,7 @@ export interface skillData {
   name: string;
 }
 
-export interface personalInfo {
+export interface personalInfo extends Partial<contactDetails> {
   first_name: string;
   last_name: string;
   qualification: string;
@@ -84,9 +82,6 @@ export interface personalInfo {
   image: {
     full_url: string;
   };
-  email?: string;
-  phone?: string;
-  address?: string;
 }
 
 export interface profileData {
@@ -125,8 +120,6 @@ export interface homeData {
   contact_info: contactDetails;
 }
 
-export interface homeStoreData {
+export interface homeStoreData extends loadingData {
   data: homeData | null;
-  loading: boolean;
-  error: boolean;
 }
