@@ -1,3 +1,4 @@
+import IconContainer from "@/containers/IconContainer";
 import { useAppSelector } from "@/store/hooks";
 import { RootState } from "@/store/store";
 import { createSelector } from "@reduxjs/toolkit";
@@ -33,14 +34,14 @@ const Footer = () => {
         <h4 className="font-display text-lg font-semibold mb-4">Get in Touch</h4>
         <div className="flex flex-col gap-3 text-sm opacity-80">
           <div className="flex items-center gap-2">
-            <Phone className="h-4 w-4" />
+            <IconContainer as={Phone} className="h-4 w-4" />
             <a href={`tel:${data?.phone}`} className="hover:text-orange-500 transition-colors">{data?.phone}</a>
             </div>
           <div className="flex items-center gap-2 break-words whitespace-normal">
-            <Mail className="h-4 w-4" /> 
+            <IconContainer as={Mail} className="h-4 w-4" />
             <a href={`mailto:${data?.email}`} className="hover:text-orange-500 transition-colors">{data?.email}</a>
             </div>
-          <div className="flex items-center gap-2 break-words whitespace-normal"><MapPin className="h-4 w-4" /> {data?.address} </div>
+          <div className="flex items-center gap-2 break-words whitespace-normal"><IconContainer as={MapPin} className="h-4 w-4" /> {data?.address} </div>
         </div>
       </div>}
     </div>

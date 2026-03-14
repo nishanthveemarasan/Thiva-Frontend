@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { email, maxValue, phone, required } from "@/components/helper/Validator";
-import FormInput from "@/components/formUI/formInput";
-import FormTextArea from "@/components/formUI/formTextArea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { ContactUsForm } from "@/types/form";
 import { Send } from "lucide-react";
+import InputContainer from "./InputContainer";
 const ContactForm = () => {
     const { toast } = useToast();
     const [submitted, setSubmitted] = useState(false);
@@ -44,7 +43,7 @@ const ContactForm = () => {
             value: "",
             error: "A Valid Phone Number is required",
             valid: false,
-            validator: [required, maxValue({ max: 15 }),phone],
+            validator: [required, maxValue({ max: 15 }), phone],
             mxLength: 15
         }
     });
@@ -88,12 +87,15 @@ const ContactForm = () => {
             message: form.message.value?.trim()
         }
 
+        console.log(formData);
+        return;
+
         const res = await fetch("/api/contact-us", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
-    
+
         const data = await res.json();
         if (data.success && data.result?.message) {
             toast({ title: "Message sent!", description: data.result.message });
@@ -120,61 +122,71 @@ const ContactForm = () => {
         <CardContent className="pt-6">
             <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
-                    <FormInput
-                        value={form.name.value}
+                    <InputContainer
+                        as='input'
+                        value={form.name.value ?? ""}
                         mxLength={form.name.mxLength}
                         onChange={onChangeHandler}
-                        type="name"
+                        name="name"
+                        type="text"
                         submitted={submitted}
                         valid={form.name.valid}
                         error={form.name.error}
-                        placeHolder="Your name"
+                        placeholder="Your name"
                         label="Name"
                     />
-                    <FormInput
-                        value={form.email.value}
+                    <InputContainer
+                        as='input'
+                        value={form.email.value ?? ""}
                         mxLength={form.email.mxLength}
                         onChange={onChangeHandler}
                         type="email"
+                        name="email"
                         submitted={submitted}
                         valid={form.email.valid}
                         error={form.email.error}
-                        placeHolder="your@email.com"
+                        placeholder="your@email.com"
                         label="Email Address"
                     />
                 </div>
-                <FormInput
-                    value={form.phone.value}
+                <InputContainer
+                    as='input'
+                    value={form.phone.value ?? ""}
                     mxLength={form.phone.mxLength}
                     onChange={onChangeHandler}
-                    type="phone"
+                    type="text"
+                    name="phone"
                     submitted={submitted}
                     valid={form.phone.valid}
                     error={form.phone.error}
-                    placeHolder="Phone number"
+                    placeholder="Phone number"
                     label="Phone Number"
                 />
 
-                <FormInput
-                    value={form.subject.value}
+                <InputContainer
+                    as='input'
+                    value={form.subject.value ?? ""}
                     mxLength={form.subject.mxLength}
                     onChange={onChangeHandler}
-                    type="subject"
+                    type="text"
+                    name="subject"
                     submitted={submitted}
                     valid={form.subject.valid}
                     error={form.subject.error}
-                    placeHolder="Subject of project inquiry"
+                    placeholder="Subject of project inquiry"
                     label="Subject"
                 />
-                <FormTextArea
-                    value={form.message.value}
+                <InputContainer
+                    as='textarea'
+                    value={form.message.value ?? ""}
                     mxLength={form.message.mxLength}
                     onChange={onChangeHandler}
-                    type="message"
+                    name="message"
                     submitted={submitted}
                     valid={form.message.valid}
                     error={form.message.error}
-                    placeHolder={"Tell me about your project..."}
+                    placeholder={"Tell me about your project..."}
+                    rows={5}
                     label="Message"
                 />
                 <Button role="button" type="submit" size="lg" className="w-full sm:w-auto" disabled={loading}>
