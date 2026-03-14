@@ -87,9 +87,6 @@ const ContactForm = () => {
             message: form.message.value?.trim()
         }
 
-        console.log(formData);
-        return;
-
         const res = await fetch("/api/contact-us", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
