@@ -12,6 +12,8 @@ import Projects from "@/components/HomePage/Projects";
 import HomeFooter from "@/components/HomePage/HomeFooter";
 import { useAppDispatch } from "@/store/hooks";
 import PageMetaHeader from "@/components/Header/PageMetaHeader";
+import { GetServerSidePropsContext } from "next";
+import { mockHomeData } from "../../mocks/data";
 
 
 const Home: React.FC<{ data: homeData, error: boolean }> = ({ data, error }) => {
@@ -41,7 +43,16 @@ const Home: React.FC<{ data: homeData, error: boolean }> = ({ data, error }) => 
 
 export default Home;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const isTest = context.req.headers['x-cypress-mock'] === 'true';
+  if (isTest) {
+    return {
+      props: {
+        data: mockHomeData,
+        error: false
+      }
+    };
+  }
   const store = makeStore();
   const resultAction = await store.dispatch(fetchHomeData());
   const isSuccess = fetchHomeData.fulfilled.match(resultAction);

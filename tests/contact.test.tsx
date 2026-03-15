@@ -1,6 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import Contact from "@/pages/contact";
 import { contactDetails } from "@/types/store";
+import { mockContactData } from "../mocks/data";
 
 jest.mock("@/components/Layout", () => ({ children }: any) => <div>{children}</div>);
 
@@ -13,11 +14,7 @@ jest.mock("@/hooks/use-toast", () => ({
 global.fetch = jest.fn();
 
 describe("Contact Page", () => {
-  const mockData: contactDetails = {
-    email: "thumbengineeringconstruction@yahoo.com",
-    phone: "07741304657",
-    address: "11 Marshstreet North, Dartford, DA1 5WF",
-  };
+  const mockData: contactDetails = mockContactData;
 
   beforeEach(() => {
     jest.clearAllMocks();

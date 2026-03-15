@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import Services from "@/pages/services";
 import { serviceSliceData } from "@/types/store";
@@ -17,7 +18,12 @@ describe("Services Page", () => {
   it("renders PageError when the error prop is true", () => {
     const mockData: serviceSliceData = {
       year_of_experience: 10,
-      services: []
+      services: [],
+      contact_info: {
+        email: "thumbengineeringconstruction@yahoo.com",
+        phone: "07741304657",
+        address: "11 Marshstreet North, Dartford, DA1 5WF",
+      }
     };
 
     render(<Services data={mockData} error={true} />);
@@ -32,7 +38,12 @@ describe("Services Page", () => {
       services: [
         { title: "Civil Engineering", description: "Expert design", points: ["Structural Analysis", "Material Selection"], special_point: "Certified Professionals" },
         { title: "Project Management", description: "Efficient delivery", points: ["Scheduling", "Resource Allocation"], special_point: "Proven Track Record" }
-      ]
+      ],
+      contact_info: {
+        email: "thumbengineeringconstruction@yahoo.com",
+        phone: "07741304657",
+        address: "11 Marshstreet North, Dartford, DA1 5WF",
+      }
     };
 
     render(<Services data={mockData} error={false} />);

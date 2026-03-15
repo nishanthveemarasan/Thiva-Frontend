@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   // reactCompiler is experimental in some Next 15 versions
-  experimental: {
-    reactCompiler: true, 
-  },
+  reactCompiler: true,
   // basePath: '/next',
   // assetPrefix: '/next',
 

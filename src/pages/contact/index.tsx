@@ -10,6 +10,8 @@ import MyCard from "@/components/templates/MyCard";
 import ContactForm from "@/components/ContactPage/ContactForm";
 import { useAppDispatch } from "@/store/hooks";
 import PageMetaHeader from "@/components/Header/PageMetaHeader";
+import {  GetServerSidePropsContext } from "next";
+import { mockContactData } from "../../../mocks/data";
 
 const Contact: React.FC<{ data: contactDetails, error: boolean }> = ({ data, error }) => {
   if (!data) {
@@ -54,7 +56,16 @@ const Contact: React.FC<{ data: contactDetails, error: boolean }> = ({ data, err
 
 export default Contact;
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  const isTest = context.req.headers['x-cypress-mock'] === 'true';
+    if (isTest) {
+      return {
+        props: {
+          data: mockContactData,
+          error: false
+        }
+      };
+    }
   const store = makeStore();
   const resultAction = await store.dispatch(fetchContactData());
   const isSuccess = fetchContactData.fulfilled.match(resultAction);
