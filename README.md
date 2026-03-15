@@ -18,7 +18,7 @@ A high-performance, SEO-optimized business platform built with **Next.js**, feat
 * **Headless Integration:** Consumes data from a custom Laravel REST API, demonstrating a clear separation of concerns between frontend and backend.
 
 ### Quality Assurance
-* **Unit Testing:** Comprehensive test suite using **Jest** and **React Testing Library** covering critical components and page layouts to ensure stability.
+* **Unit/integration/e2e Testing:** Comprehensive test suite using **Jest** and **Cypress** covering critical components, page layouts and page flow to ensure stability.
 
 ---
 
@@ -27,7 +27,7 @@ A high-performance, SEO-optimized business platform built with **Next.js**, feat
 * **Framework:** [Next.js](https://nextjs.org/) (React)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
-* **Testing:** [Jest](https://jestjs.io/) & React Testing Library
+* **Testing:** [Jest](https://jestjs.io/) & [cypress](https://www.cypress.io)
 * **Backend:** [Laravel 12 (REST API)](https://laravel.com/docs/12.x/)
 
 ---
