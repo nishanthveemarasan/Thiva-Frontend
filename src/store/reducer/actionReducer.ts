@@ -5,7 +5,7 @@ export const fetchContactData = createAsyncThunk(
   "contact/fetchContactData",
   async (_, { rejectWithValue }) => {
       const response = await ApiHelper.request({
-        endpoint: "api/pages/contact",
+        endpoint: "api/client/pages/contact",
         method: "GET",
       });
       if (!response.success) {
@@ -19,7 +19,7 @@ export const fetchTestimonialData = createAsyncThunk(
   "testimonial/fetchTestimonialData",
   async (_, { rejectWithValue }) => {
       const response = await ApiHelper.request({
-        endpoint: "api/pages/testimonials",
+        endpoint: "api/client/pages/testimonials",
         method: "GET",
       });
 
@@ -34,7 +34,7 @@ export const fetchServicesData = createAsyncThunk(
   "service/fetchServicesData",
   async (_, { rejectWithValue }) => {
       const response = await ApiHelper.request({
-        endpoint: "api/pages/services",
+        endpoint: "api/client/pages/services",
         method: "GET",
       });
 
@@ -49,7 +49,7 @@ export const fetchProfileData = createAsyncThunk(
   "service/fetchProfileData",
   async (_, { rejectWithValue }) => {
       const response = await ApiHelper.request({
-        endpoint: "api/pages/about",
+        endpoint: "api/client/pages/about",
         method: "GET",
       });
 
@@ -64,7 +64,7 @@ export const fetchHomeData = createAsyncThunk(
   "home/fetchHomeDate",
   async (_, { rejectWithValue }) => {
       const response = await ApiHelper.request({
-        endpoint: "api/pages/home",
+        endpoint: "api/client/pages/home",
         method: "GET",
       });
       if (!response.success) {
