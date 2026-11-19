@@ -29,7 +29,7 @@ class ApiHelper {
       clientSecret: process.env.BACKEND_SECRET_ID as string,
       type: process.env.BACKEND_GRANT_TYPE as string,
       scope: process.env.BACKEND_SCOPE as string,
-      endpoint: 'api/oauth/token'
+      endpoint: process.env.BACKEND_AUTH_URL as string
     };
 
  
