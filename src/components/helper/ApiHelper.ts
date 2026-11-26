@@ -1,5 +1,4 @@
 import axios, { AxiosResponse, AxiosInstance, AxiosRequestConfig, RawAxiosRequestHeaders} from "axios";
-import { generateSignature } from "./signature";
 import { backendParams } from "@/types/http-request";
 
 export type SetLoading = React.Dispatch<React.SetStateAction<boolean>>;
@@ -101,27 +100,6 @@ class ApiHelper {
         setLoading?.(false);
       }
     }
-  }
-
-  static async authenticatedRequest(options: ApiRequestOptions): Promise<any> {
-    const tokenRes = await this.request({
-      endpoint: "api/client-token",
-      method: "POST",
-      setLoading: options.setLoading,
-      stopLoadingOnFinish: false, 
-    });
-    if (!tokenRes.success || !tokenRes.result?.data?.access_token) {
-      if (options.setLoading) options.setLoading(false);
-      return { success: false};
-    }
-    const token = tokenRes.result.data.access_token;
-    return await this.request({
-      ...options,
-      headers: {
-        ...options.headers,
-        Authorization: `Bearer ${token}`,
-      },
-    });
   }
 }
 
