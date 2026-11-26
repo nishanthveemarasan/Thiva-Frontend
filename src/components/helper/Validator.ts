@@ -7,14 +7,10 @@ export const email = (value: string): boolean =>
         value,
     )
 export const phone = (value: string): boolean =>
-    /^\+?[0-9]\d{1,14}$/.test(
+    /^\+?[0-9]\d{10,14}$/.test(
         value,
     )
 
 export const maxValue = (config: {max: number}) => (value: string) => {
-    let isValid = true;
-    if (config.max) {
-        isValid = isValid && value.length <= config.max;
-    }
-    return isValid;
+    return value.length <= config.max;
 };
