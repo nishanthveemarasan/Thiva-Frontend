@@ -1,4 +1,4 @@
-import { email, maxValue, phone, required } from "@/app/case/doubles/units/Validator";
+import { email, maxValue, phone, required } from "@/components/helper/Validator";
 
 describe("test Validator.ts", () => {
 
