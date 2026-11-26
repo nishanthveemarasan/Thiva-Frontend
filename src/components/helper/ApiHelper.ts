@@ -67,8 +67,6 @@ class ApiHelper {
   }: ApiRequestOptions): Promise<any> {
     setLoading?.(true);
     try {
-      const hash = generateSignature(method, endpoint);
-
       const tokenResponse = await this.clientTokenRequest();
       if (!tokenResponse?.data?.access_token) {
         throw new Error("Failed to obtain access token");
