@@ -87,11 +87,26 @@ class ApiHelper {
       }
       
     } catch (e:any) {
-      console.log('API Request Error:', e?.response || "No response from server");
-      console.log('inside  catch')
-      console.log(e.message || "something went wrong")
+      const status = e?.response?.status ?? null;
+      const data = e?.response?.data;
+    
+      const message =
+        (typeof data === "string" && data) ||
+        data?.message ||
+        data?.error ||
+        e?.message ||
+        "something went wrong";
+    
+      console.error("API Request Error:", {
+        status,
+        message,
+        response: e?.response ?? "No response from server",
+      });
+    
       return {
         success: false,
+        status,
+        error: message,
       };
     } finally {
       if (stopLoadingOnFinish) {
